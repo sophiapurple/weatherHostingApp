@@ -1,0 +1,71 @@
+body {
+  margin: 60px auto;
+  max-width: 800px;
+}
+h1 {
+  font-family: "Inclusive Sans", sans-serif;
+  font-size: 70px;
+  margin-top: 80px;
+  margin-left: 40px;
+  margin-bottom: 5px;
+}
+small {
+  color: rgb(159, 162, 250);
+  font-size: 20px;
+  position: relative;
+  top: 170px;
+}
+ul {
+  color: rgb(188, 176, 181);
+  font-size: 23px;
+  list-style-type: none;
+  margin-left: 5px;
+}
+.cityInput {
+  background-color: rgb(249, 247, 254);
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 20px 120px 20px 15px;
+}
+.day {
+  position: relative;
+  top: 10px;
+}
+
+.formInput {
+  margin-left: 40px;
+}
+.gitLink {
+  color: rgb(254, 119, 163);
+}
+.humidity {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.submitButton {
+  background-color: rgb(136, 93, 241);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 20px 40px;
+  transition: all 2000ms ease-in-out;
+}
+.submitButton:hover {
+  cursor: pointer;
+}
+.temp {
+  font-family: "Open Sans", sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+.weather {
+  margin-left: 190px;
+  margin-top: 20px;
+}
+.weatherDescription {
+  margin-left: 150px;
+}
+.weatherImage {
+  font-size: 30px;
+}

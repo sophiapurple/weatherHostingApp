@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=PT+Mono&family=Poppins:wght@100&family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=PT+Mono&family=Poppins:wght@100&family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    
+    <div class="logo">
+      <img src="src/images/logo.png" alt="SheCodes Logo" />
+    </div>
+    
+      
+        <form id="form-input"  class="formInput" >
+        <input
+          type="text"
+          placeholder="Enter a city.."
+          autocomplete="off"
+          autofocus="on"
+          id="city-input"
+          class="cityInput"
+        />
+        
+        <input type="submit" value="Search" 
+        class="submitButton" />
+        </form>
+      
+      
+      <h1>City</h1>
+      <ul>
+        <strong>
+          <li class="Day" id="day">Day Time</li>
+          <li class="humidity" id="humidity">Humidity: 0%</li>
+          <li class="wind" id="wind">Wind:</li></strong
+        >
+      </ul>
+
+      <div class="temp" id="temp">10°
+        <a href="#" id=celsius-link>°C</a><span>|</span>
+         <a href="#" id =fahrenheit-link>°F</a></div>
+      <span class="weather">
+        <img src="images" class="weatherImage" id="weather-Image"/>
+      </span>
+      <span class="weatherDescription" id="weather-description">
+        Weather description</span
+      >
+      <small>
+        Coded by chinelo <a href="#" class="gitLink">github </a>
+       
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
