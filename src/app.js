@@ -27,28 +27,26 @@ function displayWeather(response) {
   cityInput = document.querySelector("#city-input").value;
   cities = document.querySelector("h1");
   city = response.data.city;
-  let country = response.data.country;
-  cities.innerHTML = `${city}, ${country}`;
+
+  cities.innerHTML = `${city}`;
   let Searchhumidity = document.querySelector("#humidity");
   humidity = Math.round(response.data.temperature.humidity);
   Searchhumidity.innerHTML = `Humidity: ${humidity}%`;
   let searchWind = document.querySelector("#wind");
   let wind = Math.round(response.data.wind.speed);
   searchWind.innerHTML = `Wind: ${wind}km/h`;
+  celsius = response.data.temperature.current;
   let Searchtemp = document.querySelector("#temp");
-  let temperature = Math.round(response.data.temperature.current);
-  Searchtemp.innerHTML = `${temperature}°c`;
+  let temperature = Math.round(celsius);
+  Searchtemp.innerHTML = `${temperature}`;
 
   let time = document.querySelector("#day");
   time.innerHTML = formatTime(response.data.time * 1000);
   let image = document.querySelector("#weather-Image");
-  image.setAttribute(
-    "src",
-    "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-  );
+  image.setAttribute("src", response.data.condition.icon_url);
 
   let weatherDescription = document.querySelector("#weather-description");
-  weatherDescription.innerHTML = response.data.condition.description;
+  weatherDescription.innerHTML = `Description: ${response.data.condition.description}`;
 }
 function searchCity(city) {
   let apiKey = "93cf0a589b1befff9b43f05fbt79bo02";
@@ -57,29 +55,34 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-function searchCensius(event) {
-  event.preventDefault();
-  let celsius = document.querySelector("#temp");
-  celsius.innerHTML = Math.round(`${temperature}°`);
-}
-// function searchFaherient(event) {
-//   event.preventDefault();
-//   let fahr = Math.round((cent.innerHTML * 9) / 5 + 32);
-//   temp = document.querySelector("#temp");
-//   temp.innerHTML = `${fahr}°c`;
-// }
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
+  let cityInput = document.querySelector("#city-input");
+  searchCity(cityInput.value);
 }
+function searchFaherient(event) {
+  event.preventDefault();
+
+  temperature = document.querySelector("#temp");
+  let fahr = (celsius * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahr);
+}
+function searchCelsius(event) {
+  event.preventDefault();
+  temperature = document.querySelector("#temp");
+
+  celsiusElement = celsius;
+  temperature.innerHTML = Math.round(celsiusElement);
+}
+let celsius = null;
+
 let form = document.querySelector("#form-input");
 form.addEventListener("submit", handleSubmit);
 
-cent = document.querySelector("#centi");
-cent.addEventListener("click", searchCentigrade);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", searchCelsius);
 
-let fahr = document.querySelector("#fahr");
+let fahr = document.querySelector("#fahrenheit-link");
 fahr.addEventListener("click", searchFaherient);
 
-searchCity(Lagos);
+searchCity("Lagos");

@@ -1,47 +1,69 @@
 body {
   margin: 60px auto;
   max-width: 800px;
+  border: 2px solid;
+  padding-top: 20px;
 }
 h1 {
   font-family: "Inclusive Sans", sans-serif;
   font-size: 70px;
   margin-top: 80px;
-  margin-left: 40px;
+  margin-left: 63px;
   margin-bottom: 5px;
 }
+img {
+  height: 70px;
+  margin: 0 auto;
+  display: block;
+}
+
 small {
-  color: rgb(159, 162, 250);
+  color: rgb(188, 176, 181);
   font-size: 20px;
-  position: relative;
-  top: 170px;
+  text-align: center;
+  margin-bottom: 5px;
 }
 ul {
   color: rgb(188, 176, 181);
   font-size: 23px;
   list-style-type: none;
-  margin-left: 5px;
+  margin-left: 25px;
 }
+.arrowIcon {
+  height: 20px;
+}
+
 .cityInput {
   background-color: rgb(249, 247, 254);
   border-radius: 4px;
   font-size: 20px;
-  padding: 20px 120px 20px 15px;
+  padding: 20px 150px 20px 15px;
 }
+
 .day {
   position: relative;
   top: 10px;
 }
+.degree {
+  position: relative;
+  left: 600px;
+  bottom: 270px;
+}
 
 .formInput {
   margin-left: 40px;
+  text-align: center;
+  margin-top: 30px;
 }
 .gitLink {
-  color: rgb(254, 119, 163);
+  color: rgb(159, 162, 250);
 }
-.humidity {
+.humidity,
+.weatherDescription {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .submitButton {
   background-color: rgb(136, 93, 241);
   border-radius: 6px;
@@ -59,13 +81,18 @@ ul {
   font-size: 70px;
   text-align: center;
 }
+.unit {
+  position: relative;
+  bottom: 40px;
+  right: 5px;
+}
 .weather {
-  margin-left: 190px;
+  margin-left: 210px;
   margin-top: 20px;
 }
-.weatherDescription {
-  margin-left: 150px;
-}
 .weatherImage {
-  font-size: 30px;
+  position: relative;
+  bottom: 170px;
+  left: 150px;
+  height: 120px;
 }
