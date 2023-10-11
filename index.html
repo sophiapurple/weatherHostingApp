@@ -16,6 +16,12 @@
       href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=PT+Mono&family=Poppins:wght@100&family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
@@ -56,10 +62,15 @@
 <span id="degree" class="degree">
       <span class="temp" id="temp">10</span>
       <span class="unit">
-        <a href="#" id="celsius-link"  class="celsius-link" >°C</a><span id="slash">|</span>
-         <a href="#" id =fahrenheit-link class="fahrenheit-link">°F</a>
-        </span></span>
+        <a href="#" id="celsius-link" class="active" >°C</a><span id="slash">|</span>
+         <a href="#" id ="fahrenheit-link">°F</a>
+        </span>
+      </span>
       
+      <div class="weatherForcast" id="weather-forcast">
+       
+ 
+      </div>
       
       <small>
           <span class="author">coded by Chinelo</span>

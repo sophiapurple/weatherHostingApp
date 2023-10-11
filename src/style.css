@@ -96,3 +96,8 @@ ul {
   left: 150px;
   height: 120px;
 }
+.weatherForcast {
+  font-size: 20px;
+}
+.weather-forcast-image {
+}

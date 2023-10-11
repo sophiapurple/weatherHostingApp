@@ -22,6 +22,30 @@ function formatTime(timeStamp) {
   let day = days[date.getDay()];
   return `${day} ${currentHour}:${currentMinutes}`;
 }
+function displayForcast() {
+  let weatherForcastElement = document.querySelector("#weather-forcast");
+  let forcastHtml = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forcastHtml =
+      forcastHtml +
+      ` 
+      <div class="col-2">
+    <div class="weatherDate">${day}</div>
+        <img src="images" class="weather-forcast-image" alt="" />
+       
+        <div class="weatherForcastTemperature">
+          <span class="weather-forcast-max">max</span>
+          <span class="weather-forcast-min">min</span>
+        </div>
+        </div>
+        
+`;
+  });
+  forcastHtml = forcastHtml + `</div>`;
+  weatherForcastElement.innerHTML = forcastHtml;
+}
+
 function displayWeather(response) {
   console.log(response);
   cityInput = document.querySelector("#city-input").value;
@@ -57,18 +81,20 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
+
   let cityInput = document.querySelector("#city-input");
   searchCity(cityInput.value);
 }
-function searchFaherient(event) {
+function displayFaherient(event) {
   event.preventDefault();
 
   temperature = document.querySelector("#temp");
   let fahr = (celsius * 9) / 5 + 32;
   temperature.innerHTML = Math.round(fahr);
 }
-function searchCelsius(event) {
+function displayCelsius(event) {
   event.preventDefault();
+
   temperature = document.querySelector("#temp");
 
   celsiusElement = celsius;
@@ -80,9 +106,10 @@ let form = document.querySelector("#form-input");
 form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", searchCelsius);
+celsiusLink.addEventListener("click", displayCelsius);
 
 let fahr = document.querySelector("#fahrenheit-link");
-fahr.addEventListener("click", searchFaherient);
+fahr.addEventListener("click", displayFaherient);
 
 searchCity("Lagos");
+displayForcast();
