@@ -22,7 +22,9 @@ function formatTime(timeStamp) {
   let day = days[date.getDay()];
   return `${day} ${currentHour}:${currentMinutes}`;
 }
-function displayForcast() {
+
+function displayForcast(response) {
+  console.log(response.data.daily);
   let weatherForcastElement = document.querySelector("#weather-forcast");
   let forcastHtml = `<div class="row">`;
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -44,6 +46,16 @@ function displayForcast() {
   });
   forcastHtml = forcastHtml + `</div>`;
   weatherForcastElement.innerHTML = forcastHtml;
+}
+
+function getForcast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "93cf0a589b1befff9b43f05fbt79bo02";
+  let urlApiKey = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+  console.log(urlApiKey);
+  axios.get(urlApiKey).then(displayForcast);
 }
 
 function displayWeather(response) {
@@ -71,7 +83,9 @@ function displayWeather(response) {
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = `Description: ${response.data.condition.description}`;
+  getForcast(response.data.coordinates);
 }
+
 function searchCity(city) {
   let apiKey = "93cf0a589b1befff9b43f05fbt79bo02";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -112,4 +126,3 @@ let fahr = document.querySelector("#fahrenheit-link");
 fahr.addEventListener("click", displayFaherient);
 
 searchCity("Lagos");
-displayForcast();
