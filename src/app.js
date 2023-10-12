@@ -23,26 +23,39 @@ function formatTime(timeStamp) {
   return `${day} ${currentHour}:${currentMinutes}`;
 }
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", " Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForcast(response) {
-  console.log(response.data.daily);
+  let forcast = response.data.daily;
+  console.log(forcast);
   let weatherForcastElement = document.querySelector("#weather-forcast");
   let forcastHtml = `<div class="row">`;
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forcastHtml =
-      forcastHtml +
-      ` 
+
+  forcast.forEach(function (forcastDay, index) {
+    if (index < 6) {
+      forcastHtml += ` 
       <div class="col-2">
-    <div class="weatherDate">${day}</div>
-        <img src="images" class="weather-forcast-image" alt="" />
+    <div class="weatherDate">${formatDay(forcastDay.time)}</div>
+        <img src=${forcastDay.condition.icon_url}
+        } class="weather-forcast-image" alt="" />
        
         <div class="weatherForcastTemperature">
-          <span class="weather-forcast-max">max</span>
-          <span class="weather-forcast-min">min</span>
+          <span class="weather-forcast-max">${Math.round(
+            forcastDay.temperature.maximum
+          )}°</span>
+          <span class="weather-forcast-min">${Math.round(
+            forcastDay.temperature.minimum
+          )}°</span>
         </div>
         </div>
         
 `;
+    }
   });
   forcastHtml = forcastHtml + `</div>`;
   weatherForcastElement.innerHTML = forcastHtml;
@@ -83,6 +96,7 @@ function displayWeather(response) {
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = `Description: ${response.data.condition.description}`;
+
   getForcast(response.data.coordinates);
 }
 
