@@ -2,7 +2,7 @@ body {
   margin: 60px auto;
   max-width: 1000px;
   border: 2px solid;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 h1 {
   font-family: "Inclusive Sans", sans-serif;
@@ -32,8 +32,13 @@ ul {
 .arrowIcon {
   height: 20px;
 }
+.app-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .author {
   font-size: 15px;
+  text-align: center;
 }
 
 .day {
