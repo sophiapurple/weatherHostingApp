@@ -91,6 +91,7 @@ function displayWeather(response) {
 
   let time = document.querySelector("#day");
   time.innerHTML = formatTime(response.data.time * 1000);
+
   let image = document.querySelector("#weather-Image");
   image.setAttribute("src", response.data.condition.icon_url);
 
