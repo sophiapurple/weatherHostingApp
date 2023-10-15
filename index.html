@@ -26,26 +26,31 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    
+    <div class="container">
     <div class="logo">
       <img src="src/images/logo.png" alt="SheCodes Logo" />
     </div>
     
       
-        <form id="form-input"  class="formInput" >
+        <form id="form-input"  class="mb-3 mt-5 ml-5 " >
+          <div class="row">
+            <div class="col-9">
         <input
-          type="text"
+          type="search"
           placeholder="Enter a city.."
           autocomplete="off"
           autofocus="on"
           id="city-input"
-          class="cityInput"
+          class="form-control"
         />
-        
+            </div>
+        <div class="col-3">
         <input type="submit" value="Search" 
-        class="submitButton" />
+        class="btn btn-primary w-100" />
+        </div>
+          </div>
         </form>
-      
+    
       
       <h1>City</h1>
       <ul>
@@ -72,12 +77,13 @@
  
       </div>
       
-      <small>
+      <div class="author">
           <span class="author">This project was coded by Chinelo</span>
          
       <a href="https://github.com/sophiapurple/weatherHostingApp.git" class="gitLink">Opened-source on GITHub</a>
+     and <a href="https://checker-zc6b.onrender.com" class="gitLink">hosted on render</a></small>
     </small>
-       
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>

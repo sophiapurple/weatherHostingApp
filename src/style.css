@@ -36,13 +36,6 @@ ul {
   font-size: 15px;
 }
 
-.cityInput {
-  background-color: rgb(249, 247, 254);
-  border-radius: 4px;
-  font-size: 20px;
-  padding: 20px 150px 20px 15px;
-}
-
 .day {
   position: relative;
   top: 10px;
@@ -52,15 +45,13 @@ ul {
   left: 600px;
   bottom: 270px;
 }
-
-.formInput {
-  margin-left: 40px;
-  text-align: center;
-  margin-top: 30px;
+.form-control {
+  font-size: 20px;
 }
+
 .gitLink {
   color: rgb(159, 162, 250);
-  font-size: small;
+  font-size: 15px;
 }
 .humidity,
 .weatherDescription {
@@ -75,11 +66,8 @@ ul {
   font-size: 20px;
   margin-left: 10px;
   padding: 20px 40px;
-  transition: all 2000ms ease-in-out;
 }
-.submitButton:hover {
-  cursor: pointer;
-}
+
 .temp {
   font-family: "Open Sans", sans-serif;
   font-size: 70px;
